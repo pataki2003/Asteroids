@@ -54,7 +54,8 @@ def main():
             for shot in shots:
                 if shot.collides_with(asteroid):
                     log_event("asteroid_shot")
-                    asteroid.kill()
+                    shot.kill()
+                    asteroid.split()
 
         player.shot_cooldown_timer -= dt
         pygame.display.flip()
